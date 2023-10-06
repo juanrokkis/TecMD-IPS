@@ -1,4 +1,4 @@
-# API de tu Aplicación
+# API IPS
 
 Esta API proporciona servicios para gestionar citas médicas, doctores y usuarios. Puedes utilizar estos endpoints para acceder a diversas funcionalidades de la aplicación.
 
