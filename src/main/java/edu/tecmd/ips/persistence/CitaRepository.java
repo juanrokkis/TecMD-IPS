@@ -1,13 +1,14 @@
 package edu.tecmd.ips.persistence;
 
+
 import edu.tecmd.ips.persistence.crud.CitaCrudRepository;
 import edu.tecmd.ips.persistence.entity.Cita;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.List;
 
 @Repository
 public class CitaRepository {
@@ -15,7 +16,7 @@ public class CitaRepository {
     @Autowired
     private CitaCrudRepository citaCrudRepository;
 
-    public Optional<Cita> getByIdUser(int id){
+    public List<Cita> getByIdUser(int id){
         return citaCrudRepository.findByIdUser(id);
     }
 

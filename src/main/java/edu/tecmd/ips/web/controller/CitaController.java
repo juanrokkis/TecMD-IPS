@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequestMapping("/citas")
@@ -21,13 +21,8 @@ public class CitaController {
 
     @GetMapping("/usuario/{id}")
     @ApiOperation(value = "Obtener citas por ID de usuario", response = Cita.class)
-    public ResponseEntity<?> getDates(@PathVariable int id){
-        Optional<Cita> citas = citaService.getAllByIdUsuario(id);
-        if (citas.isPresent()) {
-            return new ResponseEntity<>(citas.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
-        }
+    public List<Cita> getDates(@PathVariable int id){
+        return citaService.getAllByIdUsuario(id);
     }
 
     @GetMapping("/cancel/{id}")

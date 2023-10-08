@@ -6,12 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface CitaCrudRepository extends CrudRepository<Cita, Integer> {
 
     @Query(value = "select * from ips.citas where user_id = ?", nativeQuery = true)
-    Optional<Cita> findByIdUser(int idUsuario);
+    List<Cita> findByIdUser(int idUsuario);
 
 }

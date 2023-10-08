@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class CitaService {
@@ -24,7 +24,7 @@ public class CitaService {
     @Autowired
     private DoctorRepository doctorRepository;
 
-    public Optional<Cita> getAllByIdUsuario(int idUsuario){
+    public List<Cita> getAllByIdUsuario(int idUsuario){
         return citaRepository.getByIdUser(idUsuario);
     }
 
